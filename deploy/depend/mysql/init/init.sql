@@ -1,21 +1,5 @@
 
 
-
-/*
- Navicat Premium Data Transfer
-
- Source Server         : 192.168.2.159
- Source Server Type    : MySQL
- Source Server Version : 80027 (8.0.27)
- Source Host           : 192.168.2.159:3307
- Source Schema         : admin
-
- Target Server Type    : MySQL
- Target Server Version : 80027 (8.0.27)
- File Encoding         : 65001
-
- Date: 08/06/2024 20:45:40
-*/
 DROP DATABASE IF EXISTS admin;
 CREATE DATABASE admin CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
@@ -24,9 +8,7 @@ use admin;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
--- ----------------------------
--- Table structure for coin
--- ----------------------------
+
 DROP TABLE IF EXISTS `coin`;
 CREATE TABLE `coin`  (
                          `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
@@ -41,9 +23,7 @@ CREATE TABLE `coin`  (
                          UNIQUE INDEX `uni_coin_id`(`coin_id` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Table structure for error_code
--- ----------------------------
+
 DROP TABLE IF EXISTS `error_code`;
 CREATE TABLE `error_code`  (
                                `id` int NOT NULL AUTO_INCREMENT,
@@ -57,9 +37,7 @@ CREATE TABLE `error_code`  (
                                UNIQUE INDEX `uni_error_code_id`(`error_code_id` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Table structure for symbol
--- ----------------------------
+
 DROP TABLE IF EXISTS `symbol`;
 CREATE TABLE `symbol`  (
                            `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -79,9 +57,7 @@ CREATE TABLE `symbol`  (
                            UNIQUE INDEX `uni_symbol_id`(`symbol_id` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Table structure for user
--- ----------------------------
+
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
                          `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -99,21 +75,6 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 
-/*
- Navicat Premium Data Transfer
-
- Source Server         : 192.168.2.159
- Source Server Type    : MySQL
- Source Server Version : 80027 (8.0.27)
- Source Host           : 192.168.2.159:3307
- Source Schema         : trade
-
- Target Server Type    : MySQL
- Target Server Version : 80027 (8.0.27)
- File Encoding         : 65001
-
- Date: 08/06/2024 20:45:56
-*/
 
 DROP DATABASE IF EXISTS trade;
 CREATE DATABASE trade CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
@@ -122,9 +83,7 @@ use trade;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
--- ----------------------------
--- Table structure for asset
--- ----------------------------
+
 DROP TABLE IF EXISTS `asset`;
 CREATE TABLE `asset`  (
                           `id` bigint NOT NULL AUTO_INCREMENT,
@@ -139,9 +98,7 @@ CREATE TABLE `asset`  (
                           PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 208 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_00
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_00`;
 CREATE TABLE `entrust_order_00`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -168,9 +125,7 @@ CREATE TABLE `entrust_order_00`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_01
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_01`;
 CREATE TABLE `entrust_order_01`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -197,9 +152,7 @@ CREATE TABLE `entrust_order_01`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_02
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_02`;
 CREATE TABLE `entrust_order_02`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -226,9 +179,7 @@ CREATE TABLE `entrust_order_02`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_03
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_03`;
 CREATE TABLE `entrust_order_03`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -255,9 +206,7 @@ CREATE TABLE `entrust_order_03`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_04
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_04`;
 CREATE TABLE `entrust_order_04`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -284,9 +233,7 @@ CREATE TABLE `entrust_order_04`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_05
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_05`;
 CREATE TABLE `entrust_order_05`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -313,9 +260,7 @@ CREATE TABLE `entrust_order_05`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_06
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_06`;
 CREATE TABLE `entrust_order_06`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -342,9 +287,7 @@ CREATE TABLE `entrust_order_06`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_07
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_07`;
 CREATE TABLE `entrust_order_07`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -371,9 +314,7 @@ CREATE TABLE `entrust_order_07`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_08
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_08`;
 CREATE TABLE `entrust_order_08`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -400,9 +341,7 @@ CREATE TABLE `entrust_order_08`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for entrust_order_09
--- ----------------------------
+
 DROP TABLE IF EXISTS `entrust_order_09`;
 CREATE TABLE `entrust_order_09`  (
                                      `id` bigint NOT NULL COMMENT '序号 主键 雪花算法生成，递增',
@@ -429,9 +368,7 @@ CREATE TABLE `entrust_order_09`  (
                                      INDEX `uni_order_id`(`order_id` ASC) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for kline
--- ----------------------------
+
 DROP TABLE IF EXISTS `kline`;
 CREATE TABLE `kline`  (
                           `id` bigint NOT NULL AUTO_INCREMENT,
@@ -451,9 +388,7 @@ CREATE TABLE `kline`  (
                           UNIQUE INDEX `uni_symbol_kt_open`(`symbol` ASC, `kline_type` ASC, `start_time` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 80243 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for matched_order
--- ----------------------------
+
 DROP TABLE IF EXISTS `matched_order`;
 CREATE TABLE `matched_order`  (
                                   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '雪花算法id',
@@ -476,9 +411,7 @@ CREATE TABLE `matched_order`  (
                                   UNIQUE INDEX `unqi_match_sub_id`(`match_sub_id` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 332 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for user
--- ----------------------------
+
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
                          `id` int NOT NULL AUTO_INCREMENT,
@@ -500,7 +433,7 @@ create database if not exists dtm_barrier;
 use dtm_barrier;
 drop table if exists dtm_barrier.barrier;
 create table if not exists dtm_barrier.barrier(
-                                                  id bigint(22) PRIMARY KEY AUTO_INCREMENT,
+     id bigint(22) PRIMARY KEY AUTO_INCREMENT,
     trans_type varchar(45) default '',
     gid varchar(128) default '',
     branch_id varchar(128) default '',
@@ -520,14 +453,15 @@ create table if not exists dtm_barrier.barrier(
 use trade;
 INSERT INTO `trade`.`user` (`id`, `username`, `password`, `phone_number`, `status`, `created_at`, `updated_at`) VALUES (3, 'lisi', '$2a$10$9RMgCUfhSur5Gdcf9lFK/OzH8lDfpy95h829TsP14WKeOUIdcZboa', 0, 1, 1709361748, 1709361748);
 
-INSERT INTO `trade`.`asset` (`id`, `user_id`, `username`, `coin_id`, `coin_name`, `available_qty`, `frozen_qty`, `created_at`, `updated_at`) VALUES (1, 3, 'lisilisi', 3, 'IKUN', 100000.000000000000000000, 0.000000000000000000, 1699151196, 1717842556);
-INSERT INTO `trade`.`asset` (`id`, `user_id`, `username`, `coin_id`, `coin_name`, `available_qty`, `frozen_qty`, `created_at`, `updated_at`) VALUES (2, 3, 'lisilisi', 2, 'USDT', 10000.000000000000000000, 0.000000000000000000, 1699151196, 1717840944);
+
+INSERT INTO `trade`.`asset` (`id`, `user_id`, `username`, `coin_id`, `coin_name`, `available_qty`, `frozen_qty`, `created_at`, `updated_at`) VALUES (1, 3, 'lisilisi', 10001, 'IKUN', 100000.000000000000000000, 0.000000000000000000, 1699151196, 1717842556);
+INSERT INTO `trade`.`asset` (`id`, `user_id`, `username`, `coin_id`, `coin_name`, `available_qty`, `frozen_qty`, `created_at`, `updated_at`) VALUES (2, 3, 'lisilisi', 10002, 'USDT', 1000000.000000000000000000, 0.000000000000000000, 1699151196, 1717842556);
 
 use admin;
 INSERT INTO `admin`.`user` (`id`, `nickname`, `username`, `password`, `created_at`, `updated_at`, `deleted_at`) VALUES (2, '', 'test', '$2a$10$JlwKAMWRujhfry1WjQGGYO8a/LbkSmb0L/NJxReNBqdexYE697Gv6', 1707199053, 1707199053, 0);
-INSERT INTO `admin`.`coin` (`id`, `coin_id`, `coin_name`, `prec`, `created_at`, `updated_at`, `deleted_at`) VALUES (1, 1, 'BTC', 4, 1709478655, 1715176820, 0);
-INSERT INTO `admin`.`coin` (`id`, `coin_id`, `coin_name`, `prec`, `created_at`, `updated_at`, `deleted_at`) VALUES (2, 2, 'USDT', 3, 1709478663, 1717332751, 0);
-INSERT INTO `admin`.`coin` (`id`, `coin_id`, `coin_name`, `prec`, `created_at`, `updated_at`, `deleted_at`) VALUES (3, 3, 'IKUN', 3, 1717430307, 1717430307, 0);
+
+INSERT INTO `admin`.`coin` (`id`, `coin_id`, `coin_name`, `prec`, `created_at`, `updated_at`, `deleted_at`) VALUES (1, 10002, 'USDT', 5, 1709478663, 1717332751, 0);
+INSERT INTO `admin`.`coin` (`id`, `coin_id`, `coin_name`, `prec`, `created_at`, `updated_at`, `deleted_at`) VALUES (2, 10001, 'IKUN', 3, 1717430307, 1717430307, 0);
 
 INSERT INTO `admin`.`error_code` (`id`, `error_code_id`, `error_code_name`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES (28, 100001, '内部错误', 'zh-CN', 1707961978, 1707961978, 0);
 INSERT INTO `admin`.`error_code` (`id`, `error_code_id`, `error_code_name`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES (29, 100002, '内部错误', 'zh-CN', 1707962048, 1707962048, 0);
@@ -555,4 +489,6 @@ INSERT INTO `admin`.`error_code` (`id`, `error_code_id`, `error_code_name`, `lan
 INSERT INTO `admin`.`error_code` (`id`, `error_code_id`, `error_code_name`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES (59, 100012, '验证码错误', 'zh-CN', 1717341916, 1717341916, 0);
 
 
-INSERT INTO `admin`.`symbol` (`id`, `symbol_name`, `symbol_id`, `base_coin_id`, `base_coin_name`, `base_coin_prec`, `quote_coin_id`, `quote_coin_name`, `quote_coin_prec`, `created_at`, `updated_at`, `deleted_at`) VALUES (1, 'IKUN_USDT', 6, 3, 'IKUN', 3, 2, 'USDT', 3, 1717851844, 1717851844, 0);
+INSERT INTO `admin`.`symbol` (`id`, `symbol_name`, `symbol_id`, `base_coin_id`, `base_coin_name`, `base_coin_prec`, `quote_coin_id`, `quote_coin_name`, `quote_coin_prec`, `created_at`, `updated_at`, `deleted_at`) VALUES (1, 'IKUN_USDT', 1, 10001, 'IKUN', 3, 10002, 'USDT', 5, 1717851844, 1717851844, 0);
+
+

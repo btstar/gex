@@ -7,6 +7,7 @@ import (
 	"github.com/luxun9527/gex/app/quotes/api/internal/types"
 	"github.com/luxun9527/gex/common/errs"
 	"github.com/spf13/cast"
+	"google.golang.org/grpc/metadata"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -26,18 +27,17 @@ func NewGetDepthListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetD
 }
 
 func (l *GetDepthListLogic) GetDepthList(req *types.GetDepthListReq) (resp *types.GetDepthListResp, err error) {
-	// todo: add your logic here and delete this line
-	conn, ok := l.svcCtx.MatchClients.GetConn(req.Symbol)
+	_, ok := l.svcCtx.Symbols.Load(req.Symbol)
 	if !ok {
-		logx.Sloww("symbol not found", logx.Field("symbol", req.Symbol))
-		return nil, errs.Internal
+		return nil, errs.WarpMessage(errs.ParamValidateFailed, "symbol not existed")
 	}
-	client := l.svcCtx.GetMatchClient(conn)
-	depthResp, err := client.GetDepth(l.ctx, &matchpb.GetDepthReq{
+	ctx := metadata.NewIncomingContext(l.ctx, metadata.Pairs("symbol", req.Symbol))
+	depthResp, err := l.svcCtx.MatchClients.GetDepth(ctx, &matchpb.GetDepthReq{
 		Symbol: req.Symbol,
 		Level:  req.Level,
 	})
 	if err != nil {
+		logx.Errorf("GetDepthListLogic.GetDepthList error:%v", err)
 		return nil, err
 	}
 	asks := make([]*types.Position, 0, len(depthResp.Asks))

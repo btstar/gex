@@ -3,7 +3,8 @@ package logic
 import (
 	"context"
 	"github.com/luxun9527/gex/app/account/rpc/accountservice"
-	logger "github.com/luxun9527/zaplog"
+	"github.com/luxun9527/gex/common/errs"
+	logger "github.com/luxun9527/zlog"
 
 	"github.com/luxun9527/gex/app/account/api/internal/svc"
 	"github.com/luxun9527/gex/app/account/api/internal/types"
@@ -26,9 +27,9 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 }
 
 func (l *LoginLogic) Login(req *types.LoginReq) (resp *types.LoginResp, err error) {
-
-	if l.svcCtx.CaptchaStore.Verify(req.CaptchaId, req.Captcha, true) {
-		return nil, err
+	// 验证验证码
+	if !l.svcCtx.CaptchaStore.Verify(req.CaptchaId, req.Captcha, true) {
+		return nil, errs.CaptchaValidateFailed
 	}
 	loginResp, err := l.svcCtx.AccountRpcClient.Login(l.ctx, &accountservice.LoginReq{
 		Username: req.Username,

@@ -16,7 +16,9 @@
 
 ## 基本架构
 
-![](https://cdn.learnku.com/uploads/images/202403/24/51993/qySFFLK2ia.png!large)
+
+
+![img](https://cdn.nlark.com/yuque/0/2024/png/12466223/1733649642983-07a74740-d89c-4c95-90b7-a038fd4cbe95.png)
 
 ## 基本功能
 
@@ -88,7 +90,7 @@ make clear 删除镜像和容器（会删除所有的容器和新建的镜像。
 
 新增一个zap core即可，将指定级别的日志输出到我们的im中具体参考
 
-https://github.com/luxun9527/zaplog
+https://github.com/luxun9527/zlog
 
 ### Docke部署
 

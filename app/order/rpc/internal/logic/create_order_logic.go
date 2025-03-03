@@ -12,7 +12,7 @@ import (
 	matchMq "github.com/luxun9527/gex/common/proto/mq/match"
 	commonWs "github.com/luxun9527/gex/common/proto/ws"
 	gpush "github.com/luxun9527/gpush/proto"
-	logger "github.com/luxun9527/zaplog"
+	logger "github.com/luxun9527/zlog"
 	"github.com/spf13/cast"
 	"github.com/yitter/idgenerator-go/idgen"
 	"google.golang.org/protobuf/proto"
@@ -104,6 +104,7 @@ func (l *CreateOrderLogic) CreateOrder(in *pb.CreateOrderReq) (*pb.OrderEmpty, e
 		return nil, errs.CastToDtmError(errs.Internal)
 
 	}
+	//return nil, errs.CastToDtmError(errs.PulsarErr)
 	//构建消息发送
 	msg := &matchMq.MatchReq{Operate: &matchMq.MatchReq_NewOrder{
 		NewOrder: &matchMq.NewOrderOperate{
